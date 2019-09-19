@@ -56,7 +56,7 @@ Prototype Refactor
 
   class CharacterStats extends GameObject{
       constructor(attr){
-          super(attr),
+          super(attr);
           this.healthPoints = attr.healthPoints
       }
 
@@ -106,7 +106,7 @@ Prototype Refactor
 
   class Hero extends Humanoid{
       constructor(attr){
-          super(attr)
+          super(attr);
       }
 
       divineMight(){
@@ -117,14 +117,24 @@ Prototype Refactor
 
 
   
-  function Villain(vices){
-    Humanoid.call(this, vices);
-    this.unrulyPlight = function(){
-      return `A spell spoken in ${this.language} unleashes airbourne flesh eating bacteria, all but heros are taken to near death.`
-    };
-  }
+//   function Villain(vices){
+//     Humanoid.call(this, vices);
+//     this.unrulyPlight = function(){
+//       return `A spell spoken in ${this.language} unleashes airbourne flesh eating bacteria, all but heros are taken to near death.`
+//     };
+//   }
   
-  Villain.prototype = Object.create(Humanoid.prototype);
+//   Villain.prototype = Object.create(Humanoid.prototype);
+
+  class Villain extends Humanoid{
+      constructor(attr){
+          super(attr);
+      }
+
+      unrulyPlight(){
+        return `A spell spoken in ${this.language} unleashes airbourne flesh eating bacteria, all but heros are taken to near death.`
+      }
+  }
   
   
   /*
