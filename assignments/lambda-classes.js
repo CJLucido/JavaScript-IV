@@ -72,4 +72,8 @@ const CJLucido = new Student({
     previousBackground: "the rgb code for New Jersey",
     className: "Full Stack Web Development",
     favSubjects: ["Chi Gong", "Divination", "Yoga"]
-})
+});
+
+console.log(CJLucido.favSubjects);
+console.log(CJLucido.sprintChallenge(subject));
+console.log(CJLucido.PRAssignment(subject));
