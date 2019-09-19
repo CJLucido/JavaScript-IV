@@ -30,6 +30,9 @@ class Instructor extends Person {
     grade(student, subject){
         return `${student.name} receives a perfect score on ${subject}`;
     }
+    randomGrade(student){
+        return `Student's new nonsense score is ${Math.round(Math.random(student.grade) * 100)}`
+    }
 }//end of Instructor class
 
 class Student extends Person {
@@ -37,10 +40,12 @@ class Student extends Person {
         super(attr);
         this.previousBackground = attr.previousBackground,
         this.className = attr.className,
-        this.favSubjects = attr.favSubjects
+        this.favSubjects = attr.favSubjects,
+        this.grade = attr.grade
     }
 
-    listsSubjects(){//PROBLEM////////////////////////// can't reduce a class, only an array
+    listsSubjects(){//PROBLEM////////////////////////// can't reduce a class, only an array why won't "1." show up?
+
         return this.favSubjects.reduce((acc, currentVal, i) => `${acc}\n${i + 1}. ${currentVal}`)
     }
     PRAssignment(subject){
@@ -48,6 +53,13 @@ class Student extends Person {
     }
     sprintChallenge(subject){
         return `${this.name} has begun sprint challenge on ${subject}`
+    }
+    graduate(){
+        if (this.grade > 70){
+            return `Let ${this.name} walk!`
+        } else {
+            return `OOF! a ${this.grade}, ${this.name} needs a bit more work!`
+        }
     }
 }//end of Student class
 
@@ -71,7 +83,8 @@ const CJLucido = new Student({
     location: "THE CENTER OF THE EARTH",
     previousBackground: "the rgb code for New Jersey",
     className: "Full Stack Web Development",
-    favSubjects: ["Chi Gong", "Divination", "Yoga"]
+    favSubjects: ["Chi Gong", "Divination", "Yoga"],
+    grade: 86
 });
 
 const BHemm = new Instructor({
@@ -98,3 +111,6 @@ console.log(BHemm.demo(subject));
 console.log(BHemm.grade(CJLucido, subject));
 console.log(Don.standUp(channel));
 console.log(Don.debugsCode(CJLucido, subject));
+console.log(BHemm.randomGrade(CJLucido));
+console.log(Don.randomGrade(CJLucido));
+console.log(CJLucido.graduate(CJLucido));
