@@ -60,7 +60,7 @@ class ProjectManagers extends Instructors{
     standUp(this, channel){
         return `${this.name} announces to ${channel}, @channel standy times!`;
     }
-    debugsCode(){
-        return ``
+    debugsCode(this, student, subject){
+        return `${this.name} debugs ${student.name}'s code on ${subject}`
     }
 }
