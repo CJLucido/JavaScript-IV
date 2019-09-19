@@ -74,6 +74,7 @@ const CJLucido = new Student({
     favSubjects: ["Chi Gong", "Divination", "Yoga"]
 });
 
-console.log(CJLucido.favSubjects);
+console.log(CJLucido.listsSubjects());
 console.log(CJLucido.sprintChallenge(subject));
 console.log(CJLucido.PRAssignment(subject));
+console.log(CJLucido.speak());
