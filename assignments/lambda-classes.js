@@ -44,9 +44,12 @@ class Student extends Person {
         this.grade = attr.grade
     }
 
-    listsSubjects(){//PROBLEM////////////////////////// can't reduce a class, only an array why won't "1." show up?
+    listsSubjects(){//2 answers here 
 
-        return this.favSubjects.reduce((acc, currentVal, i) => `${acc}\n${i + 1}. ${currentVal}`)
+        // return this.favSubjects.reduce((acc, currentVal, i) => `${acc}\n${++i}. ${currentVal}`, '').trim();
+
+         return `${this.favSubjects.map((currentVal, i) => `\n${i + 1}. ${currentVal}`)}`.trim();
+    
     }
     PRAssignment(subject){
         return `${this.name} has submitted a PR for ${subject}`;
