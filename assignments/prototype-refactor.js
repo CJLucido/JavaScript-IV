@@ -82,7 +82,7 @@ Prototype Refactor
 //     return `${this.name} offers a greeting in ${this.language}.`
 //   }
 
-  class Humanoid{
+  class Humanoid extends CharacterStats{
       constructor(attr){
           super(attr);
           this.team = attr.team,
