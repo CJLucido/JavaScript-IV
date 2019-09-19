@@ -95,14 +95,27 @@ Prototype Refactor
       }
   }
   
-  function Hero(virtues){
-    Humanoid.call(this, virtues);
-    this.divineMight = function(){
-        return `${this.name} is immune to plights, makes it rain fire and radioactive light on opponent, destroying all villains`
-    };
-  }//end of hero constructor
+//   function Hero(virtues){
+//     Humanoid.call(this, virtues);
+//     this.divineMight = function(){
+//         return `${this.name} is immune to plights, makes it rain fire and radioactive light on opponent, destroying all villains`
+//     };
+//   }//end of hero constructor
   
-  Hero.prototype = Object.create(Humanoid.prototype);
+//   Hero.prototype = Object.create(Humanoid.prototype);
+
+  class Hero extends Humanoid{
+      constructor(attr){
+          super(attr)
+      }
+
+      divineMight(){
+        return `${this.name} is immune to plights, makes it rain fire and radioactive light on opponent, destroying all villains`
+      }
+
+  }
+
+
   
   function Villain(vices){
     Humanoid.call(this, vices);
