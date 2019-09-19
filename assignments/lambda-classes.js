@@ -1,6 +1,7 @@
 // CODE here for your Lambda Classes
 
 let subject = "Mathematics";
+let channel = "WEB24";
 
 class Person {
     constructor(attr){
@@ -42,10 +43,24 @@ class Student extends Person {
     listsSubjects(){
         return Student.favSubjects.reduce((acc, currentVal) => `${acc}\n${currentVal[0]} ${currentVal[1]}`)
     }
-    PRAssignment(){
+    PRAssignment(this, subject){
         return `${this.name} has submitted a PR for ${subject}`;
     }
-    sprintChallenge(){
+    sprintChallenge(this, subject){
         return `${this.name} has begun sprint challenge on ${subject}`
     }
 }//end of Student class
+
+class ProjectManagers extends Instructors{
+    constructor(attr){
+        super(attr);
+        this.gradClassName = attr.gradClassName,
+        this.favInstructor
+        = attr.favInstructor    }
+    standUp(this, channel){
+        return `${this.name} announces to ${channel}, @channel standy times!`;
+    }
+    debugsCode(){
+        return ``
+    }
+}
