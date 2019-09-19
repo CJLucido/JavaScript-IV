@@ -51,7 +51,7 @@ class Student extends Person {
     }
 }//end of Student class
 
-class ProjectManagers extends Instructor{
+class ProjectManager extends Instructor{
     constructor(attr){
         super(attr);
         this.gradClassName = attr.gradClassName,
@@ -83,10 +83,18 @@ const BHemm = new Instructor({
         catchPhrase: "You better pray for the internet guy too"
 })
 
-
+const Don = new ProjectManager({
+        name: "Don",
+        age: "39",
+        location: "Computer room",
+        gradClassName: "WEB24",
+        favInstructor: "Britt",
+})
 //console.log(CJLucido.listsSubjects());
 console.log(CJLucido.sprintChallenge(subject));
 console.log(CJLucido.PRAssignment(subject));
 console.log(CJLucido.speak());
 console.log(BHemm.demo(subject));
 console.log(BHemm.grade(CJLucido, subject));
+console.log(Don.standUp(channel));
+console.log(Don.debugsCode(CJLucido, subject));
