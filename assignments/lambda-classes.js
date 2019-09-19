@@ -12,7 +12,7 @@ class Person {
     speak(){
         return `Hello my name is ${this.name}, I am from ${this.location}`;
     }
-}
+} // end of Person class
 
 class Instructor extends Person {
     constructor(attr){
@@ -27,6 +27,25 @@ class Instructor extends Person {
     }
 
     grade(){
-        return `${student.name} receives a perfect score on ${subject}`;
+        return `${this.name} receives a perfect score on ${subject}`;
     }
-}
+}//end of Instructor class
+
+class Student extends Person {
+    constructor(attr){
+        super(attr);
+        this.previousBackground = attr.previousBackground,
+        this.className = attr.className,
+        this.favSubjects = attr.favSubjects
+    }
+
+    listsSubjects(){
+        return Student.favSubjects.reduce((acc, currentVal) => `${acc}\n${currentVal[0]} ${currentVal[1]}`)
+    }
+    PRAssignment(){
+        return `${this.name} has submitted a PR for ${subject}`;
+    }
+    sprintChallenge(){
+        return `${this.name} has begun sprint challenge on ${subject}`
+    }
+}//end of Student class
