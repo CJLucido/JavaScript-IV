@@ -41,7 +41,7 @@ class Student extends Person {
     }
 
     listsSubjects(){//PROBLEM////////////////////////// can't reduce a class, only an array
-        return Student.reduce((acc, currentVal) => `${acc}\n${currentVal[0].favSubjects} ${currentVal[1].favSubjects}`)
+        return this.favSubjects.reduce((acc, currentVal) => `${acc}\n${currentVal[0].favSubjects} ${currentVal[1].favSubjects}`)
     }
     PRAssignment(subject){
         return `${this.name} has submitted a PR for ${subject}`;
@@ -90,7 +90,7 @@ const Don = new ProjectManager({
         gradClassName: "WEB24",
         favInstructor: "Britt",
 })
-//console.log(CJLucido.listsSubjects());
+console.log(CJLucido.listsSubjects());
 console.log(CJLucido.sprintChallenge(subject));
 console.log(CJLucido.PRAssignment(subject));
 console.log(CJLucido.speak());
