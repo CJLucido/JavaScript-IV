@@ -42,17 +42,28 @@ Prototype Refactor
       }
   }
   
-  function CharacterStats(stats){
-    GameObject.call(this, stats);//inherits from the higher constructor
-    this.healthPoints = stats.healthPoints;
+//   function CharacterStats(stats){
+//     GameObject.call(this, stats);//inherits from the higher constructor
+//     this.healthPoints = stats.healthPoints;
   
-  }//end of CharStats constructor
+//   }//end of CharStats constructor
   
-  CharacterStats.prototype = Object.create(GameObject.prototype); //inherits/creates from the higher prototype
+//   CharacterStats.prototype = Object.create(GameObject.prototype); //inherits/creates from the higher prototype
   
-  CharacterStats.prototype.takeDamage = function(){
-    return `${this.name} took damage.`;
-  };//1:1 CharacterStats prototype Fns
+//   CharacterStats.prototype.takeDamage = function(){
+//     return `${this.name} took damage.`;
+//   };//1:1 CharacterStats prototype Fns
+
+  class CharacterStats extends GameObject{
+      constructor(attr){
+          super(attr);
+          this.healthPoints = attr.healthPoints;
+      }
+
+      takeDamage(){
+        return `${this.name} took damage.`;
+      }
+  }
   
   
   function Humanoid(traits){
