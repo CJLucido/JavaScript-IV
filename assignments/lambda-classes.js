@@ -1,5 +1,7 @@
 // CODE here for your Lambda Classes
 
+let subject = "Mathematics";
+
 class Person {
     constructor(attr){
         this.name = attr.name,
@@ -12,3 +14,19 @@ class Person {
     }
 }
 
+class Instructor extends Person {
+    constructor(attr){
+        super(attr);
+        this.specialty = attr.specialty,
+        this.favLanguage = attr.favLanguage,
+        this.catchPhrase = attr.catchPhrase
+    }
+
+    demo(){
+        return  `Today we are learning about ${subject}`;
+    }
+
+    grade(){
+        return `${student.name} receives a perfect score on ${subject}`;
+    }
+}
