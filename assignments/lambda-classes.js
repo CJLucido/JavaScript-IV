@@ -40,8 +40,8 @@ class Student extends Person {
         this.favSubjects = attr.favSubjects
     }
 
-    listsSubjects(){
-        return Student.favSubjects.reduce((acc, currentVal) => `${acc}\n${currentVal[0]} ${currentVal[1]}`)
+    listsSubjects(){//PROBLEM////////////////////////// can't reduce a class, only an array
+        return Student.reduce((acc, currentVal) => `${acc}\n${currentVal[0].favSubjects} ${currentVal[1].favSubjects}`)
     }
     PRAssignment(subject){
         return `${this.name} has submitted a PR for ${subject}`;
@@ -74,7 +74,19 @@ const CJLucido = new Student({
     favSubjects: ["Chi Gong", "Divination", "Yoga"]
 });
 
-console.log(CJLucido.listsSubjects());
+const BHemm = new Instructor({
+        name: "Britt",
+        age: "31",
+        location: "Toronto",
+        specialty: "Teaching remotely",
+        favLanguage: "Kinyarwanda",
+        catchPhrase: "You better pray for the internet guy too"
+})
+
+
+//console.log(CJLucido.listsSubjects());
 console.log(CJLucido.sprintChallenge(subject));
 console.log(CJLucido.PRAssignment(subject));
 console.log(CJLucido.speak());
+console.log(BHemm.demo(subject));
+console.log(BHemm.grade(CJLucido, subject));
