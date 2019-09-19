@@ -41,7 +41,7 @@ class Student extends Person {
     }
 
     listsSubjects(){//PROBLEM////////////////////////// can't reduce a class, only an array
-        return this.favSubjects.reduce((acc, currentVal) => `${acc}\n${currentVal[0].favSubjects} ${currentVal[1].favSubjects}`)
+        return this.favSubjects.reduce((acc, currentVal, i) => `${acc}\n${i + 1}. ${currentVal}`)
     }
     PRAssignment(subject){
         return `${this.name} has submitted a PR for ${subject}`;
