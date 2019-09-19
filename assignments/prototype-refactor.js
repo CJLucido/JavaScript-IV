@@ -56,8 +56,8 @@ Prototype Refactor
 
   class CharacterStats extends GameObject{
       constructor(attr){
-          super(attr);
-          this.healthPoints = attr.healthPoints;
+          super(attr),
+          this.healthPoints = attr.healthPoints
       }
 
       takeDamage(){
@@ -66,20 +66,33 @@ Prototype Refactor
   }
   
   
-  function Humanoid(traits){
-    CharacterStats.call(this, traits);
+//   function Humanoid(traits){
+//     CharacterStats.call(this, traits);
     
-    this.team = traits.team;
-    this.weapons = traits.weapons;
-    this.language = traits.language;
-  } // end of humanoid constructor
+//     this.team = traits.team;
+//     this.weapons = traits.weapons;
+//     this.language = traits.language;
+//   } // end of humanoid constructor
   
   
-  Humanoid.prototype = Object.create(CharacterStats.prototype);
+//   Humanoid.prototype = Object.create(CharacterStats.prototype);
   
   
-  Humanoid.prototype.greet = function(){
-    return `${this.name} offers a greeting in ${this.language}.`
+//   Humanoid.prototype.greet = function(){
+//     return `${this.name} offers a greeting in ${this.language}.`
+//   }
+
+  class Humanoid{
+      constructor(attr){
+          super(attr);
+          this.team = attr.team,
+          this.weapons = attr.weapons,
+          this.language = attr.language
+      }
+
+      greet(){
+        return `${this.name} offers a greeting in ${this.language}.`
+      }
   }
   
   function Hero(virtues){
