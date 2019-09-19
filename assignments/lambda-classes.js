@@ -43,24 +43,33 @@ class Student extends Person {
     listsSubjects(){
         return Student.favSubjects.reduce((acc, currentVal) => `${acc}\n${currentVal[0]} ${currentVal[1]}`)
     }
-    PRAssignment(this, subject){
+    PRAssignment(subject){
         return `${this.name} has submitted a PR for ${subject}`;
     }
-    sprintChallenge(this, subject){
+    sprintChallenge(subject){
         return `${this.name} has begun sprint challenge on ${subject}`
     }
 }//end of Student class
 
-class ProjectManagers extends Instructors{
+class ProjectManagers extends Instructor{
     constructor(attr){
         super(attr);
         this.gradClassName = attr.gradClassName,
         this.favInstructor
         = attr.favInstructor    }
-    standUp(this, channel){
+    standUp(channel){
         return `${this.name} announces to ${channel}, @channel standy times!`;
     }
-    debugsCode(this, student, subject){
+    debugsCode(student, subject){
         return `${this.name} debugs ${student.name}'s code on ${subject}`
     }
 }//end of PM class
+
+const CJLucido = new Student({
+    name: "Carlo",
+    age: "5mil",
+    location: "THE CENTER OF THE EARTH",
+    previousBackground: "the rgb code for New Jersey",
+    className: "Full Stack Web Development",
+    favSubjects: ["Chi Gong", "Divination", "Yoga"]
+})
