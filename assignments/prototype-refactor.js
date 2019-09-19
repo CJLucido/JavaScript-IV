@@ -17,18 +17,30 @@ Prototype Refactor
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
 
-function GameObject(props){
-    this.createdAt= props.createdAt;
-    this.name= props.name;
-    this.dimensions = props.dimensions;
+// function GameObject(props){
+//     this.createdAt= props.createdAt;
+//     this.name= props.name;
+//     this.dimensions = props.dimensions;
   
-    GameObject.prototype.destroy = function(){
-      return `${this.name} was removed from the game.`;
-    };
+//     GameObject.prototype.destroy = function(){
+//       return `${this.name} was removed from the game.`;
+//     };
   
   
   
-  }; //end of GameObject constructor
+//   }; //end of GameObject constructor
+
+  class GameObject {
+      constructor(attr){
+      this.createdAt = attr.createdAt,
+      this.name = attr.name,
+      this.dimensions = attr.dimensions
+      }
+
+      destroy(){
+        return `${this.name} was removed from the game.`;
+      }
+  }
   
   function CharacterStats(stats){
     GameObject.call(this, stats);//inherits from the higher constructor
